@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app > div{
+            border:1px dashed #aaa;
+            padding: 50px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>動態改變背景色-三元運算子</h1>
+    <div id="app">
+        <!-- 使用三元運算子，檢查變數是否為true? -->
+         <!-- true:yellow -->
+          <!-- false:blue -->
+
+        <div style="background-color:yellow;">變色區</div>
+        <div v-bind:style="{backgroundColor:isCheck?'yellow':'skyblue'}">變色區</div>
+    </div>
+    
+     <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+     <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    isCheck:false
+                }
+            }
+        })
+        app.mount('#app')
+     </script>
+</body>
+</html>

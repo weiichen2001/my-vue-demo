@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            border: 1px dashed #333;
+            width: 200px;
+            padding: 0 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染區 -->
+    <div id="app">
+        <p v-if="score>=60 && score<=100">及格</p>
+        <p v-else-if="score>=0 && score<60">不及格</p>
+        <p v-else="">不是有效分數範圍</p>
+    </div>
+
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    score: 101
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

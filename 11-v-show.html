@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            border:1px dashed #333;
+            width: 200px;
+            padding: 10px;
+        }
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-show="showDiv">v-show1</div>
+        <!-- 搭配邏輯運算子 -->
+        <div v-show="!showDiv">v-show2</div>
+    </div>
+
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    showDiv: false
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

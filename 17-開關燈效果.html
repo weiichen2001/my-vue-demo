@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            border:1px dashed #333;
+            display: inline-block;
+            padding: 20px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        #lightDiv{
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        #lightDiv > div{
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+        #app > button{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="lightDiv">
+            <!-- 預設不顯示 -->
+            <div  v-show="lightOn"></div>
+            <img src="./images/light.svg" alt="">
+        </div>
+        <button v-on:click="lightOn =!lightOn">開關燈</button>
+    </div>
+    
+     <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+     <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    // 預設為關燈
+                    lightOn:false
+                }
+            }
+        })
+        app.mount('#app')
+     </script>
+</body>
+</html>

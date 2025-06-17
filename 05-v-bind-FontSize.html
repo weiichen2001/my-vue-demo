@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            background-color: skyblue;
+            display: inline-block;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>v-bind:綁定文字大小</h1>
+    <div id="app">
+        <!-- HTML行內樣式 -->
+        <div style="font-size: 32px;">綁定文字大小</div>
+        <!-- v-bind樣式 -->
+        <div v-bind:style="{fontSize:size}">綁定文字大小</div>
+    </div>
+    
+     <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+     <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    size:"48px"
+
+                }
+            }
+        })
+        app.mount('#app')
+     </script>
+</body>
+</html>

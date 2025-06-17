@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid #ccc;
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+        }
+        .colorBG{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS綁定</h1>
+    <div id="app">
+        <div class="colorBG">CSS直接套樣式</div>
+        <div v-bind:class="vueClass">CSS綁定結果</div>
+    </div>
+    
+     <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+     <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    vueClass:"colorBG"
+                }
+            }
+        })
+        app.mount('#app')
+     </script>
+</body>
+</html>

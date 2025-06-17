@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            border: 1px dashed #333;
+            display: flex;
+            width: 200px;
+        }
+
+        img {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 類似js的forEach -->
+            <!-- 使用迴圈v-for顯示文字陣列內容 -->
+            <li v-for="item in arr1">{{item}}</li>
+
+            <!-- 使用迴圈v-for顯示文字陣列內容 -->
+            <div>
+                <img v-for="pic in arr2" v-bind:src="pic" alt="">
+                <img v-for="pic2 in arr3" v-bind:src=`./images/${pic2}` alt="">
+            </div>
+        </ul>
+
+    </div>
+
+    <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    // 文字陣列
+                    arr1: ['a', 'b', 'c'],
+                    // 圖片路徑+名稱陣列
+                    arr2: ['./images/blue.jpg', './images/purple.jpg'],
+                    // 圖片名稱陣列
+                    arr3: ['yellow.jpg', 'purple.jpg']
+
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

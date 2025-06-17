@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            border: 1px solid #333;
+            width: 200px;
+            padding: 0 20px 20px;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>綁定圖片</h1>
+        <p>v-bind-image</p>
+        <!-- 原生HTML寫法 -->
+        <img src="./images/blue.jpg" alt="">
+        <!-- Vue綁定寫法 -->
+        <img v-bind:src="imgUrl" alt="">
+    </div>
+    
+     <!-- VUE CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue撰寫區 -->
+     <script>
+        const app=Vue.createApp({
+            data(){
+                return{
+                    imgUrl:"./images/blue.jpg"
+                }
+            }
+        })
+        app.mount('#app')
+     </script>
+</body>
+</html>
